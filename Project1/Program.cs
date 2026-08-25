@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
-            // Gọi phương thức từ file FileName.cs
-            class1.InLoiChao();
+            buoi2.ex1();
+            buoi2.ex2();
+            buoi2.ex3();
         }
     }
 }
