@@ -179,7 +179,6 @@ namespace Project1
                 Console.WriteLine($"Diem GPA Thang 4: 0.0");
                 Console.WriteLine($"Xep Loai Hoc Luc: Kem (Truot)");
             }
-
         }
     }
 }
