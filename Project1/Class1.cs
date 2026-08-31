@@ -138,7 +138,7 @@ namespace Project1
             Console.WriteLine($"so tien VND tinh doi: {sotienvndthucte:N0} VND");
             Console.WriteLine($"so {kyhieu} nhan duoc {sotienngoai:F2} ");
         }
-        public static void bai4()
+        public static void bai5()
         {
             Console.Write("nhap diem C# (4 TC): "); double diemC = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine() ; Console.Write("nhap diem Toan (3 TC): "); double diemT = Convert.ToDouble(Console.ReadLine());
