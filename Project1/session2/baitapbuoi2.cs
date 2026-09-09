@@ -1,38 +1,11 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Project1
+namespace Project1.session1
 {
-    public class buoi2
+    internal class baitapbuoi2
     {
-        public static void ex1()
-        {
-            // bai celsius
-            Console.Write("celsius = ");
-            double celsius = Convert.ToSingle(Console.ReadLine());
-            double kelvin = celsius + 273;
-            double fahrenhelt = celsius * 18 / 10 + 32;
-            Console.WriteLine($"kelvin = {kelvin}");
-            Console.WriteLine($"fahrenhelt = {fahrenhelt}");
-        }
-        public static void ex2()
-        {
-            Console.Write("ban kinh = ");
-            double radius = double.Parse(Console.ReadLine());
-            double surface = 4 * Math.PI * Math.Pow(radius, 2);
-            double volume = 4 / 3 * Math.PI * Math.Pow(radius, 3);
-            Console.WriteLine($"surface = {surface:f2}");
-            Console.WriteLine($"volume = {volume:f2}");
-        }
-        public static void ex3()
-        {
-            double a = double.Parse(Console.ReadLine());
-            double b = double.Parse(Console.ReadLine());
-            Console.WriteLine($"12 + 3 = {12 + 3}");
-            Console.WriteLine($"12 - 3 = {12 - 3}");
-            Console.WriteLine($"12 * 3 = {12 * 3}");
-            Console.WriteLine($"12 / 3 = {12 / 3}");
-            Console.WriteLine($"12 mod 3 = {12 % 3}");
-        }
         public static void bai1()
         {
             double diencu = Convert.ToSingle(Console.ReadLine());
@@ -103,7 +76,7 @@ namespace Project1
             Console.WriteLine($"Khuyên dùng: Cân nặng lý tưởng của bạn nên từ {cannangtoithieu:f2} kg đến {cannangtoida:f2} kg");
         }
         public static void bai3()
-        { 
+        {
             Console.Write("nhap so tien VND = ");
             decimal sotienvnd = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("chon ngoai te (1-USD, 2-EUR, 3-JPY, 4-GBP): ");
@@ -141,7 +114,7 @@ namespace Project1
         public static void bai5()
         {
             Console.Write("nhap diem C# (4 TC): "); double diemC = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine() ; Console.Write("nhap diem Toan (3 TC): "); double diemT = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(); Console.Write("nhap diem Toan (3 TC): "); double diemT = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(); Console.Write("nhap diem Tieng Anh (2 TC): "); double diemTA = Convert.ToDouble(Console.ReadLine());
             double diemTB = (diemC * 4 + diemT * 3 + diemTA * 2) / (4 + 3 + 2);
             if (diemTB >= 8.5)
