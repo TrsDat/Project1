@@ -1,6 +1,6 @@
 ﻿namespace Project1
 {
-    public class buoi3
+    public class exbuoi3
     {
         public static void ex1()
         {

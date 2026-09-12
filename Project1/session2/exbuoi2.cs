@@ -2,7 +2,7 @@
 
 namespace Project1.session1
 {
-    public class buoi2
+    public class exbuoi2
     {
         public static void ex1()
         {
