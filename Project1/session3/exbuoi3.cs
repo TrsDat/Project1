@@ -1,54 +1,36 @@
-﻿namespace Project1
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Project1.session1
 {
     public class exbuoi3
     {
         public static void ex1()
         {
-            double a = Convert.ToDouble(Console.ReadLine());
-            double b = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine(a + b);
-            Console.WriteLine(a - b);
-            Console.WriteLine(a * b);
-            Console.WriteLine(a / b);
+            Console.Write("celsius = ");
+            double celsius = Convert.ToSingle(Console.ReadLine());
+            double kelvin = celsius + 273;
+            double fahrenhelt = celsius * 18 / 10 + 32;
+            Console.WriteLine($"kelvin = {kelvin}");
+            Console.WriteLine($"fahrenhelt = {fahrenhelt}");
         }
         public static void ex2()
         {
-            double y = Convert.ToDouble(Console.ReadLine());
-            double x = Math.Pow(y, 2) + 2 * y + 1;
-            Console.WriteLine(x);
+            Console.Write("ban kinh = ");
+            double radius = double.Parse(Console.ReadLine());
+            double surface = 4 * Math.PI * Math.Pow(radius, 2);
+            double volume = 4 / 3 * Math.PI * Math.Pow(radius, 3);
+            Console.WriteLine($"surface = {surface:f2}");
+            Console.WriteLine($"volume = {volume:f2}");
         }
         public static void ex3()
         {
-            Console.Write("distance(km): ");
-            double s = Convert.ToDouble(Console.ReadLine());
-            Console.Write("time(hours): ");
-            double t = Convert.ToDouble(Console.ReadLine());
-            double v = s / t;
-            Console.WriteLine($"speed (km/h) : {v:f2}");
-            Console.WriteLine($"speed (miles/h) : {v / 0.621371:f2}");
-
-        }
-        public static void ex4()
-        {
-            Console.Write("ban kinh = ");
-            double r = Convert.ToDouble(Console.ReadLine());
-            double dientichbemat = 4 * Math.PI * Math.Pow(r, 2);
-            double thetich = 4 / 3.0 * Math.PI * Math.Pow(r, 3);
-            Console.WriteLine($"dien tich be mat : {dientichbemat:f2}");
-            Console.WriteLine($"the tich : {thetich:f2}");
-
-        }
-        public static void ex5()
-        {
-            char a = Convert.ToChar(Console.ReadLine());
-            int ascii = (int)a;
-            if (a == 'a' || a == 'e' || a == 'u' || a == 'o' || a == 'i')
-                Console.WriteLine("la nguyen am");
-            else if ((ascii >= 97 && ascii <= 122) || (ascii >= 65 && ascii <= 90))
-                Console.WriteLine("la phu am");
-            else if (ascii >= 48 && ascii <= 57)
-                Console.WriteLine("la so");
-            else Console.WriteLine("khac");
+            double a = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+            Console.WriteLine($"12 + 3 = {12 + 3}");
+            Console.WriteLine($"12 - 3 = {12 - 3}");
+            Console.WriteLine($"12 * 3 = {12 * 3}");
+            Console.WriteLine($"12 / 3 = {12 / 3}");
+            Console.WriteLine($"12 mod 3 = {12 % 3}");
         }
     }
 }

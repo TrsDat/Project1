@@ -1,157 +1,157 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 
-namespace Project1.session3
+namespace Project1.session1
 {
     internal class baitapbuoi3
     {
-        public static void ex1()
+        public static void bai1()
         {
-            Console.Write("Tuoi: ");
-            int tuoi = int.Parse(Console.ReadLine());
-            Console.Write("Gio chieu: ");
-            double giochieu = double.Parse(Console.ReadLine());
-            if (tuoi > 60 || tuoi < 12)
-                Console.WriteLine("Gia ve la: 50,000 VND");
-            else if (giochieu < 17)
-                Console.WriteLine("Gia ve la: 80,000 VND");
-            else Console.WriteLine("Gia ve la: 110,000 VND");
-        }
-        public static void ex2()
-        {
-            Console.Write("Role = ");
-            string role = Console.ReadLine();
-            if (role == "ADMIN") Console.WriteLine("Toan quyen quan tri he thong");
-            else if (role == "MANAGER") Console.WriteLine("Quyen quan ly nhan su va xem bao cao");
-            else if (role == "EMPLOYEE") Console.WriteLine("Quyen tao vaf chinh sua ho so ca nhan");
-            else if (role == "GUEST") Console.WriteLine("Chi co quyen xem thong tin cong khai");
-            else Console.WriteLine("Ma vai tro khong hop le");
-
-        }
-        public static void ex3()
-        {
-            Console.Write("So du = "); 
-            long sodu = long.Parse(Console.ReadLine());
-            Console.Write("So tien rut = ");
-            long sotienrut= long.Parse(Console.ReadLine());
-            if (sodu < 0) Console.WriteLine("So tien khong hop le");
-            else if (sotienrut%50000!=0) Console.WriteLine("So tien rut phai la boi so của 50,000 VND");
-            else if (sotienrut > sodu) Console.WriteLine("So tien rut vuot qua so du");
-            else if (sotienrut > 5000000) Console.WriteLine("So tien rut vuot qua han muc");
-            else Console.WriteLine($"Rut tien thanh cong. So du con lai: {sodu - sotienrut}");
-        }
-        public static void ex4()
-        {
-            int i = 0;
-            do
+            double diencu = Convert.ToSingle(Console.ReadLine());
+            double dienmoi = Convert.ToSingle(Console.ReadLine());
+            double luongdien = dienmoi - diencu;
+            double tienchuatheothue = 0;
+            Console.WriteLine($"so dien tieu thu = {luongdien}");
+            if (luongdien > 0)
             {
-                Console.Write("Phim bam = ");
-                int phimbam = int.Parse(Console.ReadLine());
-                switch (phimbam)
+                if (luongdien <= 50)
                 {
-                    case 0: Console.WriteLine("Quay lai menu chinh"); break;
-                    case 1: Console.WriteLine("Gap tong dai vien tu van the"); break;
-                    case 2: Console.WriteLine("Tra cuu so du tai khoan"); break;
-                    case 3: Console.WriteLine("Bao khoa the khanr cap"); break;
-                    case 4: Console.WriteLine("Tra cuu ty gia ngoai te"); break;
-                    default: Console.WriteLine("Lua chon khong hop le. Vui long thu lai"); i = 1; break;
+                    tienchuatheothue = luongdien * 1.806;
                 }
-            } while (i != 0);            
-        }
-        public static void ex5()
-        {
-            double tong = 0;
-            Console.Write("So km = ");
-            double km = double.Parse(Console.ReadLine());
-            if (km <= 1) tong = 15_000;
-            else if (km <= 10) tong = 15_000 + (km - 1) * 12_000;
-            else tong = 15_000 + 9 * 12_000 + (km - 10) * 10_000;
-            if (km>30)
-            {
-                Console.WriteLine($"Tong tien truoc giam: {tong}");
-                Console.WriteLine($"Khuyen mai (10%): -{tong * 0.1}");
-                Console.WriteLine($"Thanh tien: {tong * 0.9}");
+                else if (luongdien <= 100)
+                {
+                    tienchuatheothue = 50 * 1.806 + (luongdien - 50) * 1.866;
+                }
+                else if (luongdien <= 200)
+                {
+                    tienchuatheothue = 50 * 1.806 + 50 * 1.866 + (luongdien - 100) * 2.167;
+                }
+                else if (luongdien <= 300)
+                {
+                    tienchuatheothue = 50 * 1.806 + 50 * 1.866 + 100 * 2.167 + (luongdien - 200) * 2.729;
+                }
+                else
+                {
+                    tienchuatheothue = 50 * 1.806 + 50 * 1.866 + 100 * 2.167 + 100 * 2.729 + (luongdien - 300) * 3.050;
+                }
+                double tienthuevat = tienchuatheothue * 0.08;
+                double tongtienphaitra = tienchuatheothue + tienthuevat;
+                Console.WriteLine($"tien dien chua thue = {tienchuatheothue:F2}");
+                Console.WriteLine($"thue vat = {tienthuevat:F2}");
+                Console.WriteLine($"tong thanh toan = {tongtienphaitra:F2}");
+
             }
-            else Console.WriteLine($"Thanh tien: {tong}");
-        }        
-        public static void ex6()
-        {
-            Console.Write("Trang thai = ");
-            int trangthai = int.Parse(Console.ReadLine());
-            switch (trangthai)
+            else
             {
-                case 1: Console.WriteLine("[Trang thai]: Cho xac nhan thanh toan"); break;
-                case 2: Console.WriteLine("[Trang thai]: Dang dong goi va ban giao don vi van chuyen"); break;
-                case 3: Console.WriteLine("[Trang thai]: Don hang dang tren duong giao den ban"); break;
-                case 4: Console.WriteLine("[Trang thai]: Don hang da hoan thanh. Cam on ban!"); break;
-                case 5: Console.WriteLine("[Trang thai]: Don hang da huy. Xuat phieu hoan tien."); break;
-                default: break;
+                Console.WriteLine("chi so moi phai lon hon chi so cu");
             }
         }
-        public static void ex7()
+        public static void bai2()
         {
-            Console.Write("Can nang (kg) = ");
-            double cannang = double.Parse(Console.ReadLine());
-            Console.Write("Chieu cao (m) = ");
-            double chieucao = double.Parse(Console.ReadLine());
-            double bmi = cannang / Math.Pow(chieucao,2);
-            Console.WriteLine($"(BMI: {bmi:F2})");
-            if (bmi < 18.5) Console.WriteLine("Thay gay - Nen bo sung dinh duong");
-            else if (bmi < 25) Console.WriteLine("Can doi - Tiep tuc duy tri");
-            else if (bmi < 30) Console.WriteLine("Thua can - Nen tang cuong luyen tap");
-            else Console.WriteLine("Beo phi - Can su tu van tu bac si");
-        }
-        public static void ex8()
-        {
-            Console.Write("Loai xe : ");
-            string loaixe = Console.ReadLine();
-            Console.WriteLine("Thoi gian : ");
-            int thoigian = int.Parse(Console.ReadLine());
-            switch (loaixe)
+            Console.Write("chieu cao (m) = ");
+            double chieucao = Convert.ToSingle(Console.ReadLine());
+            Console.Write("can nang (kg) = ");
+            double cannang = Convert.ToSingle(Console.ReadLine());
+            double bmi = cannang / Math.Pow(chieucao, 2);
+            Console.WriteLine($"chi so BMI = {bmi:F2}");
+            if (bmi < 18.5)
             {
-                case "BIKE":
-                    {
-                        if (thoigian == 1) Console.WriteLine("Phi gui xe dap (ban ngay): 5,000VND");
-                        else if (thoigian == 2) Console.WriteLine("Phi gui xe dap (ban dem): 10,000VND");
-                        else Console.WriteLine("Thoi gian khong hop le");
-                    }
-                    break;
-                case "CAR":
-                    {
-                        if (thoigian == 1) Console.WriteLine("Phi gui xe o to (ban ngay): 30,000VND");
-                        else if (thoigian == 2) Console.WriteLine("Phi gui xe o to (ban dem): 60,000VND");
-                        else Console.WriteLine("Thoi gian khong hop le");
-                    }
-                    break;
-                default: Console.WriteLine("Loai xe khong hop le"); break;
+                Console.WriteLine("phan loai suc khoe: gay");
             }
+            else if (bmi < 23 && bmi >= 18.5)
+            {
+                Console.WriteLine("phan loai suc khoe: binh thuong");
+            }
+            else if (bmi < 25 && bmi >= 23)
+            {
+                Console.WriteLine("phan loai suc khoe: thua can");
+            }
+            else
+            {
+                Console.WriteLine("phan loai suc khoe: beo phi");
+            }
+            double cannangtoithieu = 18.5 * Math.Pow(chieucao, 2);
+            double cannangtoida = 22.9 * Math.Pow(chieucao, 2);
+            Console.WriteLine($"Khuyên dùng: Cân nặng lý tưởng của bạn nên từ {cannangtoithieu:f2} kg đến {cannangtoida:f2} kg");
         }
-        public static void ex9()
-        {
-            Console.Write("GPA = ");
-            double GPA = double.Parse(Console.ReadLine());
-            Console.Write("DRL = ");
-            int DRL = int.Parse(Console.ReadLine());
-            if (GPA>=3.6 && DRL >=90) Console.WriteLine("Ket qua: Hoc bong Xuat sac (Muc 100%)");
-            else if (GPA>=3.2 && DRL>=80) Console.WriteLine("Ket qua: Hoc bong Kha/Gioi (Muc 50%)");
-        }
-        public static void ex10()
+        public static void bai3()
         {
             Console.Write("nhap so tien VND = ");
-            double sotienvnd = double.Parse(Console.ReadLine());
-            Console.Write("Ma ngoai te : ");
-            string ngoaite = Console.ReadLine();
-            double quydoi = 0;
-            switch (ngoaite)
+            decimal sotienvnd = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("chon ngoai te (1-USD, 2-EUR, 3-JPY, 4-GBP): ");
+            int chon = Convert.ToInt32(Console.ReadLine());
+            decimal phidichvu = sotienvnd * 0.005m;
+            decimal sotienvndthucte = sotienvnd - phidichvu;
+            decimal sotienngoai = 0;
+            string kyhieu = "";
+            switch (chon)
             {
-                case "USD": quydoi = sotienvnd / 25400; break;
-                case "EUR": quydoi = sotienvnd / 27200; break;
-                case "JPY": quydoi = sotienvnd / 165; break;
-                default: Console.WriteLine("Ma ngoai te khong hop le"); break;
+                case 1:
+                    sotienngoai = sotienvndthucte / 25400;
+                    kyhieu = "USD";
+                    break;
+                case 2:
+                    sotienngoai = sotienvndthucte / 27200;
+                    kyhieu = "EUR";
+                    break;
+                case 3:
+                    sotienngoai = sotienvndthucte / 165;
+                    kyhieu = "JPY";
+                    break;
+                case 4:
+                    sotienngoai = sotienvndthucte / 32100;
+                    kyhieu = "GBP";
+                    break;
+                default:
+                    Console.WriteLine("chon ngoai te khong hop le");
+                    break;
             }
-            Console.WriteLine($"So tien sau quy doi : {quydoi:f2} {ngoaite}");
+            Console.WriteLine($"phi dich vu (0.5%) : {phidichvu:N0} VND");
+            Console.WriteLine($"so tien VND tinh doi: {sotienvndthucte:N0} VND");
+            Console.WriteLine($"so {kyhieu} nhan duoc {sotienngoai:F2} ");
+        }
+        public static void bai5()
+        {
+            Console.Write("nhap diem C# (4 TC): "); double diemC = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(); Console.Write("nhap diem Toan (3 TC): "); double diemT = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(); Console.Write("nhap diem Tieng Anh (2 TC): "); double diemTA = Convert.ToDouble(Console.ReadLine());
+            double diemTB = (diemC * 4 + diemT * 3 + diemTA * 2) / (4 + 3 + 2);
+            if (diemTB >= 8.5)
+            {
+                Console.WriteLine($"Diem TB Thang 10: {diemTB:F2}");
+                Console.WriteLine($"Diem Chu Quy Doi: A");
+                Console.WriteLine($"Diem GPA Thang 4: 4.0");
+                Console.WriteLine($"Xep Loai Hoc Luc: Xuat sac / Gioi");
+            }
+            else if (diemTB >= 7.0)
+            {
+                Console.WriteLine($"Diem TB Thang 10: {diemTB:F2}");
+                Console.WriteLine($"Diem Chu Quy Doi: B");
+                Console.WriteLine($"Diem GPA Thang 4: 3.0");
+                Console.WriteLine($"Xep Loai Hoc Luc: Kha");
+            }
+            else if (diemTB >= 5.5)
+            {
+                Console.WriteLine($"Diem TB Thang 10: {diemTB:F2}");
+                Console.WriteLine($"Diem Chu Quy Doi: C");
+                Console.WriteLine($"Diem GPA Thang 4: 2.0");
+                Console.WriteLine($"Xep Loai Hoc Luc: Trung binh");
+            }
+            else if (diemTB >= 4.0)
+            {
+                Console.WriteLine($"Diem TB Thang 10: {diemTB:F2}");
+                Console.WriteLine($"Diem Chu Quy Doi: D");
+                Console.WriteLine($"Diem GPA Thang 4: 1.0");
+                Console.WriteLine($"Xep Loai Hoc Luc: Yeu");
+            }
+            else
+            {
+                Console.WriteLine($"Diem TB Thang 10: {diemTB:F2}");
+                Console.WriteLine($"Diem Chu Quy Doi: F");
+                Console.WriteLine($"Diem GPA Thang 4: 0.0");
+                Console.WriteLine($"Xep Loai Hoc Luc: Kem (Truot)");
+            }
         }
     }
 }
