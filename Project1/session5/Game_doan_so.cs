@@ -5,5 +5,18 @@ namespace Project1.session5
 {
     internal class Game_doan_so
     {
+        public static void main(String[] args) 
+        {
+            vaogame();
+        }
+        public static void vaogame()
+        {
+            int tien = 1_000_000;
+
+            do
+            {
+                Console.WriteLine("Ban chon che do nao? De(D) Trung binh(TB) Kho(K)");
+            }
+        }
     }
 }
