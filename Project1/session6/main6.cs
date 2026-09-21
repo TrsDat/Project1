@@ -13,7 +13,7 @@
             //baitapbuoi6.ex7();
             //baitapbuoi6.ex8();
             //baitapbuoi6.ex9();
-            baitapbuoi6.ex10();
+            //baitapbuoi6.ex10();
         }
     }
 }

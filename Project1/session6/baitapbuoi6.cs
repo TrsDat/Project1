@@ -143,10 +143,14 @@ namespace Project1.session6
                            .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                            .Select(int.Parse)
                            .ToArray();
+            Console.WriteLine(TinhTrungBinh(arr));
         }
-        //public static double TinhTrungBinh(int[] arr)
-        //{
-
-        //}
+        public static double TinhTrungBinh(int[] arr)
+        {
+            double tong = 0;
+            for (int i = 0; i < arr.Length; i++)
+                tong += arr[i];
+            return tong/arr.Length;
+        }
     }
 }
