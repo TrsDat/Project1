@@ -8,8 +8,7 @@ namespace Project1.session7
     {
         public static void Main(string[] args)
         {
-            exbuoi7.ex1();
         }
-
+        
     }
 }
