@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Project1.session1
+namespace Project1.session3
 {
     internal class baitapbuoi3
     {

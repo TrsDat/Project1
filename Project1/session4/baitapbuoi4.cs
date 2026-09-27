@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Project1.session3
+namespace Project1.session4
 {
     internal class baitapbuoi4
     {
@@ -32,12 +32,12 @@ namespace Project1.session3
         }
         public static void ex3()
         {
-            Console.Write("So du = "); 
+            Console.Write("So du = ");
             long sodu = long.Parse(Console.ReadLine());
             Console.Write("So tien rut = ");
-            long sotienrut= long.Parse(Console.ReadLine());
+            long sotienrut = long.Parse(Console.ReadLine());
             if (sodu < 0) Console.WriteLine("So tien khong hop le");
-            else if (sotienrut%50000!=0) Console.WriteLine("So tien rut phai la boi so của 50,000 VND");
+            else if (sotienrut % 50000 != 0) Console.WriteLine("So tien rut phai la boi so của 50,000 VND");
             else if (sotienrut > sodu) Console.WriteLine("So tien rut vuot qua so du");
             else if (sotienrut > 5000000) Console.WriteLine("So tien rut vuot qua han muc");
             else Console.WriteLine($"Rut tien thanh cong. So du con lai: {sodu - sotienrut}");
@@ -58,7 +58,7 @@ namespace Project1.session3
                     case 4: Console.WriteLine("Tra cuu ty gia ngoai te"); break;
                     default: Console.WriteLine("Lua chon khong hop le. Vui long thu lai"); i = 1; break;
                 }
-            } while (i != 0);            
+            } while (i != 0);
         }
         public static void ex5()
         {
@@ -68,14 +68,14 @@ namespace Project1.session3
             if (km <= 1) tong = 15_000;
             else if (km <= 10) tong = 15_000 + (km - 1) * 12_000;
             else tong = 15_000 + 9 * 12_000 + (km - 10) * 10_000;
-            if (km>30)
+            if (km > 30)
             {
                 Console.WriteLine($"Tong tien truoc giam: {tong}");
                 Console.WriteLine($"Khuyen mai (10%): -{tong * 0.1}");
                 Console.WriteLine($"Thanh tien: {tong * 0.9}");
             }
             else Console.WriteLine($"Thanh tien: {tong}");
-        }        
+        }
         public static void ex6()
         {
             Console.Write("Trang thai = ");
@@ -96,7 +96,7 @@ namespace Project1.session3
             double cannang = double.Parse(Console.ReadLine());
             Console.Write("Chieu cao (m) = ");
             double chieucao = double.Parse(Console.ReadLine());
-            double bmi = cannang / Math.Pow(chieucao,2);
+            double bmi = cannang / Math.Pow(chieucao, 2);
             Console.WriteLine($"(BMI: {bmi:F2})");
             if (bmi < 18.5) Console.WriteLine("Thay gay - Nen bo sung dinh duong");
             else if (bmi < 25) Console.WriteLine("Can doi - Tiep tuc duy tri");
@@ -134,8 +134,8 @@ namespace Project1.session3
             double GPA = double.Parse(Console.ReadLine());
             Console.Write("DRL = ");
             int DRL = int.Parse(Console.ReadLine());
-            if (GPA>=3.6 && DRL >=90) Console.WriteLine("Ket qua: Hoc bong Xuat sac (Muc 100%)");
-            else if (GPA>=3.2 && DRL>=80) Console.WriteLine("Ket qua: Hoc bong Kha/Gioi (Muc 50%)");
+            if (GPA >= 3.6 && DRL >= 90) Console.WriteLine("Ket qua: Hoc bong Xuat sac (Muc 100%)");
+            else if (GPA >= 3.2 && DRL >= 80) Console.WriteLine("Ket qua: Hoc bong Kha/Gioi (Muc 50%)");
         }
         public static void ex10()
         {
